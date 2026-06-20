@@ -1,0 +1,259 @@
+.choice-section {
+  padding: 60px 24px;
+  background: linear-gradient(180deg, #FDF8F0, #FFFFFF);
+}
+
+.choice-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.choice-title {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--maroon);
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.choice-subtitle {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+/* Horizontal Scroll */
+.choice-scroll-wrapper {
+  position: relative;
+}
+
+.choice-scroll-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  gap: 8px;
+}
+
+.choice-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid #C5993A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C5993A;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.choice-arrow:hover {
+  background: #C5993A;
+  color: var(--white);
+}
+
+.choice-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
+  scrollbar-width: none;
+}
+
+.choice-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Royal Card */
+.choice-card {
+  min-width: 500px;
+  max-width: 500px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+  background: linear-gradient(160deg, #3A0808, #5B0E0E 40%, #2A0606);
+  border: 1.5px solid #C5993A44;
+  transition: all 0.3s;
+}
+
+.choice-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(197, 153, 58, 0.2);
+  border-color: #C5993A;
+}
+
+/* Gold pattern overlay */
+.choice-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C5993A' fill-opacity='0.05'%3E%3Cpath d='M20 0v40M0 20h40'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Card Image */
+.choice-card-image {
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.2);
+}
+
+.choice-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s;
+}
+
+.choice-card:hover .choice-card-img {
+  transform: scale(1.05);
+}
+
+.choice-card-emoji {
+  font-size: 56px;
+}
+
+/* Card Body */
+.choice-card-body {
+  padding: 18px 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.choice-card-category {
+  font-size: 10px;
+  font-weight: 700;
+  color: #C5993A;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(197, 153, 58, 0.12);
+  border: 1px solid rgba(197, 153, 58, 0.25);
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.choice-card-name {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #C5993A;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.3px;
+}
+
+.choice-card-shop {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 14px;
+}
+
+.choice-card-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C5993A44, transparent);
+  margin-bottom: 14px;
+}
+
+.choice-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choice-card-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.choice-card-material {
+  font-size: 10px;
+  color: #C5993A;
+  background: rgba(197, 153, 58, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(197, 153, 58, 0.2);
+  font-weight: 600;
+}
+
+/* Show More */
+.choice-show-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.choice-show-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 40px;
+  background: transparent;
+  color: #C5993A;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid #C5993A;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.choice-show-more-btn:hover:not(:disabled) {
+  background: #C5993A;
+  color: var(--white);
+}
+
+.choice-show-more-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .choice-section {
+    padding: 40px 16px;
+  }
+
+  .choice-title {
+    font-size: 22px;
+  }
+
+  .choice-card {
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  .choice-card-image {
+    height: 150px;
+  }
+
+  .choice-card-name {
+    font-size: 14px;
+  }
+
+  .choice-card-price {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,62 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app > footer {
+  margin-top: auto;
+}
+
+/* Smooth scrolling - only for in-page anchor links, not route changes */
+html {
+  scroll-behavior: auto;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(139, 26, 26, 0.2);
+  color: var(--text-dark);
+}
+
+/* Home Loader */
+.home-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+  color: var(--text-gray);
+}
+
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--dark-red);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.home-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+  color: var(--text-gray);
+}
+
+.home-error button {
+  padding: 10px 24px;
+  background: var(--dark-red);
+  color: var(--white);
+  border-radius: 8px;
+  font-weight: 600;
+}

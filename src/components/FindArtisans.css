@@ -1,0 +1,132 @@
+/* Artisans Section */
+.artisans-section {
+  background: #F8F6F3;
+  margin: 0;
+  padding: 0;
+}
+
+.artisans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.artisans-content {
+  color: #1E293B;
+}
+
+.artisans-title {
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  font-style: italic;
+}
+
+.artisans-description {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+
+/* Stats */
+.artisans-stats {
+  display: flex;
+  gap: 40px;
+}
+
+.artisans-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.artisans-stat-number {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #92400E;
+}
+
+.artisans-stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+/* Images Grid */
+.artisans-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.artisans-image-card {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: #E2E8F0;
+}
+
+.artisans-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artisans-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  background: linear-gradient(135deg, #D6CFC7, #B8AFA5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .artisans-container {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 32px;
+  }
+
+  .artisans-title {
+    font-size: 24px;
+  }
+
+  .artisans-stats {
+    gap: 24px;
+  }
+
+  .artisans-stat-number {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .artisans-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .artisans-images {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .artisans-image-card {
+    aspect-ratio: 3/4;
+  }
+}

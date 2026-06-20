@@ -1,0 +1,505 @@
+.navbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 32px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--maroon);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.logo-text {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+}
+
+.logo-highlight {
+  color: var(--dark-red);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.2s;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #EA580C;
+}
+
+.nav-chevron {
+  margin-left: 2px;
+  transition: transform 0.2s;
+}
+
+/* Categories Dropdown */
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+.nav-dropdown-wrapper > .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.nav-mega-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 100;
+  width: max-content;
+}
+
+.nav-dropdown-wrapper:hover .nav-mega-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-dropdown-wrapper:hover .nav-chevron {
+  transform: rotate(180deg);
+}
+
+.mega-dropdown-inner {
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+  padding: 16px 20px;
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.mega-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.mega-item:hover {
+  background: #FFF7ED;
+  transform: translateY(-2px);
+}
+
+.mega-item-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #F1F5F9, #E2E8F0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid #F1F5F9;
+  transition: border-color 0.2s;
+}
+
+.mega-item:hover .mega-item-img {
+  border-color: #FDBA74;
+}
+
+.mega-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mega-item-emoji {
+  font-size: 22px;
+}
+
+.mega-item-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  line-height: 1;
+}
+
+.mega-item:hover .mega-item-name {
+  color: #EA580C;
+}
+
+.mega-loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #94A3B8;
+  font-size: 13px;
+  padding: 20px;
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #F3F4F6;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.search-box:focus-within {
+  border-color: #D1D5DB;
+  background: var(--white);
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--text-dark);
+  outline: none;
+  width: 140px;
+}
+
+.search-input::placeholder {
+  color: #9CA3AF;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  color: var(--text-dark);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.icon-btn:hover {
+  background: var(--light-gray);
+}
+
+.cart-btn {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #EA580C;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-btn {
+  background: #1E293B;
+  color: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+
+.account-btn:hover {
+  background: #334155;
+}
+
+.account-logged-in {
+  background: #EA580C;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
+
+.account-logged-in:hover {
+  background: #C2410C;
+}
+
+/* User Dropdown */
+.nav-user-wrapper {
+  position: relative;
+}
+
+.nav-user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--white);
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  min-width: 200px;
+  padding: 16px;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.nav-user-wrapper:hover .nav-user-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-user-info {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.nav-user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1E293B;
+  margin-bottom: 2px;
+}
+
+.nav-user-phone {
+  font-size: 12px;
+  color: #94A3B8;
+}
+
+.nav-logout-btn {
+  width: 100%;
+  padding: 8px;
+  background: none;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #DC2626;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-logout-btn:hover {
+  background: #FEF2F2;
+  border-color: #FECACA;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 12px;
+    gap: 8px;
+    height: 56px;
+  }
+
+  .navbar-logo {
+    gap: 6px;
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .logo-text {
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+
+  .navbar-icons {
+    gap: 4px;
+  }
+
+  .icon-btn {
+    padding: 6px;
+  }
+
+  .account-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cart-badge {
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+    top: 1px;
+    right: 1px;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .nav-mega-dropdown {
+    position: static;
+    transform: none;
+    padding-top: 0;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: auto;
+  }
+
+  .nav-mega-dropdown.nav-mega-open {
+    opacity: 1;
+    visibility: visible;
+    max-height: 500px;
+    padding-top: 8px;
+  }
+
+  .nav-dropdown-wrapper:hover .nav-mega-dropdown {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav-dropdown-wrapper:hover .nav-mega-dropdown.nav-mega-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-chevron-open {
+    transform: rotate(180deg);
+  }
+
+  .mega-dropdown-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-width: auto;
+    box-shadow: none;
+    border: none;
+    padding: 4px 0;
+    gap: 4px;
+    background: transparent;
+  }
+
+  .mega-item {
+    flex-direction: column;
+    padding: 8px 4px;
+    gap: 6px;
+    border-radius: 8px;
+  }
+
+  .mega-item-img {
+    width: 40px;
+    height: 40px;
+    border-width: 1.5px;
+  }
+
+  .mega-item-emoji {
+    font-size: 18px;
+  }
+
+  .mega-item-name {
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .mega-dropdown-inner {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
