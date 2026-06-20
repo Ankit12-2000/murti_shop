@@ -1,4 +1,4 @@
-export const API_BASE = 'https://mymurti-server.vercel.app';
+export const API_BASE = 'https://mymurti-server-88q9.vercel.app';
 
 // Simple in-memory cache with TTL
 const cache = new Map();
